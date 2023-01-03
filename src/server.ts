@@ -1,16 +1,10 @@
 import express, { response } from "express";
+import { categoriesRouters } from "./routes/categories-routes";
 
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.json({ message: "its working" }).send();
-});
-
-app.post("/courses", (req, res) => {
-  const { name } = req.body;
-
-  res.send(name);
-});
+app.use(express.json());
+app.use("/", categoriesRouters);
 
 app.listen(PORT, () => console.log("Server is Running"));
