@@ -12,4 +12,10 @@ categoriesRouters.post("/", (req, res) => {
   res.status(201).send();
 });
 
+categoriesRouters.get("/", (req, res) => {
+  const all = categoriesRepository.list();
+
+  return res.json(all);
+});
+
 export { categoriesRouters };
