@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CarRentX Documentation",
+    "description": "This is a api documentation",
+    "version": "1.0.0",
+    "contact": {
+      "email": "marcosoliveira.rd@gmail.com"
+    }
+  }
+}
