@@ -8,7 +8,6 @@ const AppDataSource = new DataSource({
   username: "postgres",
   password: "20041650",
   database: "",
-  entities: [],
   synchronize: true,
   logging: false,
 });
