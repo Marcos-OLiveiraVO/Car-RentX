@@ -14,11 +14,9 @@ $ yarn
 
 ## Rodar o app
 
-```bash
-$ yarn dev
-```
-```
-```
+
+    $ yarn dev
+
 ## Rotas
 
     /api-docs => documentação.
