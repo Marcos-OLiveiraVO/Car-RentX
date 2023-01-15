@@ -21,7 +21,7 @@ $ yarn
 
     POST /categories  => Cria uma nova categoria.
     
-    GET  /categories => Lista todas as categorias.
+    GET  /categories  => Lista todas as categorias.
     
          /api-docs => documentação.
 
