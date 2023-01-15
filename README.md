@@ -19,7 +19,11 @@ $ yarn
 
 ## Rotas
 
-    /api-docs => documentação.
+    POST /categories  => Cria uma nova categoria.
+    
+    GET  /categories => Lista todas as categorias.
+    
+         /api-docs => documentação.
 
 
 ![image](https://user-images.githubusercontent.com/88260644/212519771-8b9d31cf-8f71-4042-b4e9-d2628e16d900.png)
