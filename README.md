@@ -17,7 +17,6 @@ $ yarn
 ```bash
 $ yarn dev
 ```
-
 ```
 ```
 ## Rotas
@@ -28,4 +27,7 @@ $ yarn dev
 
     - Node.
     - Typescript.
-    - uuid
+    - uuid.
+    - typeorm.
+    - postgres.
+    - swagger.
