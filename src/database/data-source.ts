@@ -9,6 +9,8 @@ const AppDataSource = new DataSource({
   password: "20041650",
   database: "",
   entities: [],
+  migrations: [],
+  migrationsTableName: "migrations",
   synchronize: true,
   logging: false,
 });
