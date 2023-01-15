@@ -21,6 +21,8 @@ $ yarn dev
 ```
 ## Rotas
 
+    /api-docs => documentação.
+
  
 
 <h4> 🛠 Projeto está sendo desenvolvido utilizando as seguintes tecnologias e conceitos: <h4>
