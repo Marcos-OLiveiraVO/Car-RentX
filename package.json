@@ -9,7 +9,8 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "typeorm-ts-node-commonjs"
   },
   "dependencies": {
     "csv-parse": "^5.3.3",

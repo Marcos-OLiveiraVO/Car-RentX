@@ -9,7 +9,7 @@ const AppDataSource = new DataSource({
   password: "20041650",
   database: "",
   entities: [],
-  migrations: [],
+  migrations: ["./src/database/migrations/*.ts"],
   migrationsTableName: "migrations",
   synchronize: true,
   logging: false,
@@ -23,3 +23,5 @@ AppDataSource.initialize()
     // here you can start to work with your database
   })
   .catch((error) => console.log(error));
+
+export default AppDataSource;
