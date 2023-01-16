@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "typeorm-ts-node-commonjs"
+    "typeorm": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts  "
   },
   "dependencies": {
     "csv-parse": "^5.3.3",
