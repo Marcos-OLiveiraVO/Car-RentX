@@ -41,3 +41,4 @@ $ yarn
     - swagger.
     - SOLID.
     - Clean Architecture.
+    - tsyringe.
