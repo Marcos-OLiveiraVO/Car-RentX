@@ -33,6 +33,7 @@ $ yarn
 <h4> 🛠 Projeto está sendo desenvolvido utilizando as seguintes tecnologias e conceitos: <h4>
 
     - Node.
+    - Express
     - Typescript.
     - uuid.
     - typeorm.
@@ -40,3 +41,4 @@ $ yarn
     - swagger.
     - SOLID.
     - Clean Architecture.
+    - tsyringe.
