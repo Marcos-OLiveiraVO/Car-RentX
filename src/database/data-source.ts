@@ -2,6 +2,7 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { Category } from "../modules/cars/entities/Category-model";
 import { Specification } from "../modules/cars/entities/Specification";
+import { User } from "../modules/accounts/entities/User";
 
 const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,7 +11,7 @@ const AppDataSource = new DataSource({
   username: "postgres",
   password: "20041650",
   database: "",
-  entities: [Category, Specification],
+  entities: [Category, Specification, User],
   migrations: ["./src/database/migrations/*.ts"],
   migrationsTableName: "migrations",
   synchronize: true,
