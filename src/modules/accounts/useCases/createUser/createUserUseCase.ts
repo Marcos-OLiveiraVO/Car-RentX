@@ -1,10 +1,11 @@
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 import { IUserRepository } from "../../repositories/IUserRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 
+@injectable()
 class CreateUserUseCase {
   constructor(
-    @inject("usersRepository")
+    @inject("UsersRepository")
     private userRepository: IUserRepository
   ) {}
 
