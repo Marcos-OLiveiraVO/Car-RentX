@@ -14,7 +14,7 @@ const AppDataSource = new DataSource({
   entities: [Category, Specification, User],
   migrations: ["./src/database/migrations/*.ts"],
   migrationsTableName: "migrations",
-  synchronize: true,
+  synchronize: false,
   logging: false,
 });
 
