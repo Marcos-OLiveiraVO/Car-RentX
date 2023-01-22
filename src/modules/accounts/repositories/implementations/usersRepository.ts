@@ -10,6 +10,7 @@ class UsersRepository implements IUserRepository {
   constructor() {
     this.repository = dataSource.getRepository(User);
   }
+
   findByEmail(email: string): Promise<User> {
     const user = this.repository.findOneBy({ email });
     return user;
@@ -29,6 +30,11 @@ class UsersRepository implements IUserRepository {
     });
 
     await this.repository.save(user);
+  }
+
+  async findById(id: string): Promise<User> {
+    const user = await this.repository.findOneBy({ id });
+    return user;
   }
 }
 
