@@ -21,6 +21,9 @@ class User {
   @Column()
   driver_licence: string;
 
+  @Column()
+  avatar: string;
+
   @CreateDateColumn()
   created_at: Date;
 
