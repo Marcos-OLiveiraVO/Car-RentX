@@ -15,7 +15,7 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts",
     "typeorm:migration": "typeorm migration:create ./src/database/migrations/",
     "test": "jest"
