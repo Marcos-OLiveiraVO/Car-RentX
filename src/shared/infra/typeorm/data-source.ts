@@ -1,8 +1,8 @@
-import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Category } from "@modules/cars/infra/typeorm/entities/Category-model";
-import { User } from "@modules/accounts/infra/typeorm/entities/User";
-import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
+import "reflect-metadata";
+import { User } from "../../../modules/accounts/infra/typeorm/entities/User";
+import { Category } from "../../../modules/cars/infra/typeorm/entities/Category-model";
+import { Specification } from "../../../modules/cars/infra/typeorm/entities/Specification";
 
 const AppDataSource = new DataSource({
   type: "postgres",
@@ -12,19 +12,14 @@ const AppDataSource = new DataSource({
   password: "20041650",
   database: "",
   entities: [Category, Specification, User],
-  migrations: ["./src/database/migrations/*.ts"],
+  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   migrationsTableName: "migrations",
   synchronize: false,
   logging: false,
 });
 
-// to initialize initial connection with the database, register all entities
-// and "synchronize" database schema, call "initialize()" method of a newly created database
-// once in your application bootstrap
 AppDataSource.initialize()
-  .then(() => {
-    // here you can start to work with your database
-  })
+  .then(() => {})
   .catch((error) => console.log(error));
 
 export default AppDataSource;
