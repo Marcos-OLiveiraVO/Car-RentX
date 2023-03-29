@@ -1,5 +1,6 @@
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-Memory/carsRepositoryInMemory";
 import { CreateCarUseCase } from "./createCarsUseCase";
+import { AppError } from "@shared/errors/appError";
 
 let createCarUseCase: CreateCarUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
@@ -11,7 +12,7 @@ describe("Create Car", () => {
   });
 
   it("should be able to create a new car", async () => {
-    await createCarUseCase.execute({
+    const car = await createCarUseCase.execute({
       name: "fiat",
       description: "uno zero",
       brand: "uno",
@@ -20,5 +21,45 @@ describe("Create Car", () => {
       license_plate: "0203103",
       fine_amount: 23123213,
     });
+
+    expect(car).toHaveProperty("id");
+  });
+
+  it("should not be able to create a car with exists licence plate", () => {
+    expect(async () => {
+      await createCarUseCase.execute({
+        name: "car1",
+        description: "uno zero",
+        brand: "uno",
+        category_id: "3",
+        daily_rate: 100,
+        license_plate: "0203103",
+        fine_amount: 23123213,
+      });
+
+      await createCarUseCase.execute({
+        name: "car2",
+        description: "uno zero",
+        brand: "uno",
+        category_id: "3",
+        daily_rate: 100,
+        license_plate: "0203103",
+        fine_amount: 23123213,
+      });
+    }).rejects.toBeInstanceOf(AppError);
+  });
+
+  it("should not be able to create a car with exists licence plate", async () => {
+    const car = await createCarUseCase.execute({
+      name: "car2",
+      description: "uno zero",
+      brand: "uno",
+      category_id: "3",
+      daily_rate: 100,
+      license_plate: "0203103",
+      fine_amount: 23123213,
+    });
+
+    expect(car.available).toBe(true);
   });
 });
