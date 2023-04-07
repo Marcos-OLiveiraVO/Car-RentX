@@ -3,12 +3,14 @@ import { categoriesRouters } from "./categories-routes";
 import { specificationRouters } from "./specification-routes";
 import { usersRouters } from "./users-routes";
 import { authenticateRouter } from "./authenticate-routes";
+import { carsRouter } from "./cars-routes";
 
 const router = Router();
 
 router.use("/categories", categoriesRouters);
 router.use("/specifications", specificationRouters);
 router.use("/users", usersRouters);
+router.use("/cars", carsRouter);
 router.use(authenticateRouter);
 
 export { router };
