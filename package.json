@@ -16,8 +16,9 @@
   },
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
+    "test": "jest",
     "typeorm": "typeorm-ts-node-commonjs -d ./src/shared/infra/typeorm/data-source.ts",
-    "test": "jest"
+    "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
