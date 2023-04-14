@@ -34,7 +34,7 @@ $ yarn
 <h4> 🛠 Project is being developed using the following technologies and concepts: <h4>
 
     - Node.
-    - Express
+    - Express.
     - Typescript.
     - uuid.
     - typeorm.
