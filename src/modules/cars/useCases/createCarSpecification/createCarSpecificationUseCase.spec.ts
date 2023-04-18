@@ -1,0 +1,46 @@
+import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-Memory/carsRepositoryInMemory";
+import { CreateCarSpecification } from "./createCarSpecificationUseCase";
+import { AppError } from "@shared/errors/appError";
+
+let carsRepositoryInMemory: CarsRepositoryInMemory;
+let createCarSpecificationUseCase: CreateCarSpecification;
+
+describe("Create car Specification", () => {
+  beforeEach(() => {
+    carsRepositoryInMemory = new CarsRepositoryInMemory();
+    createCarSpecificationUseCase = new CreateCarSpecification(
+      carsRepositoryInMemory
+    );
+  });
+
+  it("should be able to add a new specification to the car", async () => {
+    expect(async () => {
+      const car_id = "1234";
+      const specifications_id = ["1234"];
+
+      await createCarSpecificationUseCase.execute({
+        car_id,
+        specifications_id,
+      });
+    }).rejects.toBeInstanceOf(AppError);
+  });
+
+  it("should be able to add a new specification to the car", async () => {
+    const car = await carsRepositoryInMemory.create({
+      brand: "audi 06_test",
+      description: "audio13",
+      daily_rate: 600.0,
+      license_plate: "sdasda-245",
+      fine_amount: 250,
+      name: "audi x3r",
+      category_id: "95d61c8c-0bd7-4dae-8f24-b394f7fb3c3a",
+    });
+
+    const specifications_id = ["1234"];
+
+    await createCarSpecificationUseCase.execute({
+      car_id: car.id,
+      specifications_id,
+    });
+  });
+});
