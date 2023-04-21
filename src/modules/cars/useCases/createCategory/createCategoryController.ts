@@ -9,7 +9,7 @@ class CreateCategoryController {
 
     const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
 
-    await createCategoryUseCase.execute({ name, description });
+    await createCategoryUseCase.execute({ description, name });
 
     return res.status(201).send();
   }

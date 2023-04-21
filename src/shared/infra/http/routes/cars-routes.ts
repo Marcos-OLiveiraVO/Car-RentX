@@ -7,12 +7,20 @@ import { ListAvailableCarsController } from "@modules/cars/useCases/listAvailabl
 const carsRouter = Router();
 const createCarController = new CreateCarController();
 const listAvailableCarsController = new ListAvailableCarsController();
+const createCarSpecificationController = new CreateCarController();
 
 carsRouter.post(
   "/",
   ensureAuthenticated,
   ensureAdmin,
   createCarController.handle
+);
+
+carsRouter.post(
+  "/specifications/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  createCarSpecificationController.handle
 );
 
 carsRouter.get("/available", listAvailableCarsController.handle);
