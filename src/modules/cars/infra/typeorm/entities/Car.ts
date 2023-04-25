@@ -8,7 +8,7 @@ import {
   ManyToOne,
   PrimaryColumn,
 } from "typeorm";
-import { v4 as uuid } from "uuid";
+import { v4 as uuidV4 } from "uuid";
 import { Category } from "./Category-model";
 import { Specification } from "./Specification";
 
@@ -27,7 +27,7 @@ class Car {
   daily_rate: number;
 
   @Column()
-  available: true;
+  available: boolean;
 
   @Column()
   license_plate: string;
@@ -58,7 +58,7 @@ class Car {
 
   constructor() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuidV4();
       this.available = true;
     }
   }
