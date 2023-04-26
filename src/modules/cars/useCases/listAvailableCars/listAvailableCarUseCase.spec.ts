@@ -5,7 +5,7 @@ let listAvailableCarsUseCase: ListAvailableCarsUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("list car", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
     listAvailableCarsUseCase = new ListAvailableCarsUseCase(
       carsRepositoryInMemory
