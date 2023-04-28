@@ -2,6 +2,7 @@ import { Rental } from "@modules/rentals/infra/typeorm/Rental";
 import { ICreateRentalRepository } from "@modules/rentals/repositories/ICreateRentalRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/appError";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   car_id: string;
@@ -9,9 +10,12 @@ interface IRequest {
   expect_return_date: Date;
 }
 
+@injectable()
 class CreateRentalUseCase {
   constructor(
+    @inject("RentalRepository")
     private createRentalRepository: ICreateRentalRepository,
+    @inject("DateProvider")
     private dayJsDateProvider: IDateProvider
   ) {}
 
@@ -50,7 +54,7 @@ class CreateRentalUseCase {
     const rental = await this.createRentalRepository.create({
       car_id,
       user_id,
-      expect_return_date: new Date(),
+      expect_return_date,
     });
 
     return rental;

@@ -5,6 +5,7 @@ import { Category } from "../../../modules/cars/infra/typeorm/entities/Category-
 import { Specification } from "../../../modules/cars/infra/typeorm/entities/Specification";
 import { Car } from "../../../modules/cars/infra/typeorm/entities/Car";
 import { CarImage } from "../../../modules/cars/infra/typeorm/entities/CarImage";
+import { Rental } from "@modules/rentals/infra/typeorm/Rental";
 
 const AppDataSource = new DataSource({
   type: "postgres",
@@ -13,7 +14,7 @@ const AppDataSource = new DataSource({
   username: "postgres",
   password: "20041650",
   database: "",
-  entities: [Category, Specification, User, Car, CarImage],
+  entities: [Category, Specification, User, Car, CarImage, Rental],
   migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   migrationsTableName: "migrations",
   synchronize: false,
