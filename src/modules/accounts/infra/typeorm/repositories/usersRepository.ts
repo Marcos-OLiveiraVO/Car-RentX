@@ -2,7 +2,7 @@ import { Repository } from "typeorm";
 import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
 import { User } from "@modules/accounts/infra/typeorm/entities/User";
 import { IUserRepository } from "@modules/accounts/repositories/IUserRepository";
-import dataSource from "@shared/infra/typeorm/data-source";
+import { dataSource } from "@shared/infra/typeorm/data-source";
 
 class UsersRepository implements IUserRepository {
   private repository: Repository<User>;

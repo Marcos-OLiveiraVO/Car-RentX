@@ -5,15 +5,19 @@ import { Category } from "../../../modules/cars/infra/typeorm/entities/Category-
 import { Specification } from "../../../modules/cars/infra/typeorm/entities/Specification";
 import { Car } from "../../../modules/cars/infra/typeorm/entities/Car";
 import { CarImage } from "../../../modules/cars/infra/typeorm/entities/CarImage";
-import { Rental } from "@modules/rentals/infra/typeorm/Rental";
+import { Rental } from "../../../modules/rentals/infra/typeorm/Rental";
 
-const AppDataSource = new DataSource({
+require("dotenv/config");
+
+const isTestEnv = process.env.NODE_ENV === "test";
+
+const dataSource = new DataSource({
   type: "postgres",
   host: "localhost",
   port: 5432,
   username: "postgres",
   password: "20041650",
-  database: "",
+  database: isTestEnv ? "postgres" : "rentx_test",
   entities: [Category, Specification, User, Car, CarImage, Rental],
   migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   migrationsTableName: "migrations",
@@ -21,8 +25,9 @@ const AppDataSource = new DataSource({
   logging: false,
 });
 
-AppDataSource.initialize()
+dataSource
+  .initialize()
   .then(() => {})
   .catch((error) => console.log(error));
 
-export default AppDataSource;
+export { dataSource };

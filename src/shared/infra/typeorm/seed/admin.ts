@@ -1,5 +1,4 @@
-import dataSource from "../data-source";
-
+import { dataSource } from "../data-source";
 import { v4 as uuidV4 } from "uuid";
 import { hashSync } from "bcrypt";
 

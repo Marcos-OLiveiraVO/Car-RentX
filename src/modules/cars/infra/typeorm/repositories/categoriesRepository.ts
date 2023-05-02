@@ -5,7 +5,7 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "@modules/cars/repositories/ICategoriesRepository";
-import dataSource from "@shared/infra/typeorm/data-source";
+import { dataSource } from "@shared/infra/typeorm/data-source";
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -15,7 +15,7 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
-    const category = this.repository.create({
+    const category = await this.repository.create({
       name,
       description,
     });

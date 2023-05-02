@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["dayjs", "licence", "tsyringe", "typeorm"]
+  "cSpell.words": [
+    "dayjs",
+    "licence",
+    "postgres",
+    "rentx",
+    "tsyringe",
+    "typeorm"
+  ]
 }
