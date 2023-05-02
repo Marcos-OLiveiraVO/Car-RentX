@@ -3,7 +3,6 @@ import { app } from "@shared/infra/http/app";
 import { v4 as uuid } from "uuid";
 
 import { hash } from "bcrypt";
-// import { dataSourceTest } from "@shared/infra/typeorm/data-source-test";
 import { dataSource } from "@shared/infra/typeorm/data-source";
 
 describe("Create Category Controller", () => {
@@ -43,8 +42,6 @@ describe("Create Category Controller", () => {
         Authorization: `Bearer ${token}`,
       });
 
-    console.log(response.body);
-
     expect(response.status).toBe(201);
   });
 
@@ -65,8 +62,6 @@ describe("Create Category Controller", () => {
       .set({
         Authorization: `Bearer ${token}`,
       });
-
-    console.log(response.body);
 
     expect(response.status).toBe(400);
   });
