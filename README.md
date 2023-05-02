@@ -13,7 +13,7 @@ To run the repository it is necessary to clone it, give the following command to
 $ yarn 
 ```
 
-## Rodar o app
+## Rodar o app.
 
 
     $ yarn dev
