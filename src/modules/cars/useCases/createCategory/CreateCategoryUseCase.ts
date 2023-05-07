@@ -25,8 +25,6 @@ class CreateCategoryUseCase {
     }
 
     await this.categoriesRepository.create({ description, name });
-
-    console.log("Nova categoria criada com sucesso!");
   }
 }
 
