@@ -34,6 +34,11 @@ class CreateRentalRepositoryInMemory implements ICreateRentalRepository {
 
     return rental;
   }
+
+  async findById(id: string): Promise<Rental> {
+    const rental = this.rental.find((rental) => rental.id === id);
+    return rental;
+  }
 }
 
 export { CreateRentalRepositoryInMemory };

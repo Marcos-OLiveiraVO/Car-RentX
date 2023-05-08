@@ -34,6 +34,11 @@ class RentalRepository implements ICreateRentalRepository {
 
     return rental;
   }
+
+  async findById(id: string): Promise<Rental> {
+    const rental = await this.repository.findOneBy({ id });
+    return rental;
+  }
 }
 
 export { RentalRepository };
