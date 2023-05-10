@@ -3,13 +3,14 @@ import { RentalRepository } from "@modules/rentals/infra/repositories/RentalRepo
 import { Rental } from "@modules/rentals/infra/typeorm/Rental";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/appError";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   id: string;
   user_id: string;
 }
 
+@injectable()
 class DevolutionRentalUseCase {
   constructor(
     @inject("CarsRepository")
@@ -22,22 +23,23 @@ class DevolutionRentalUseCase {
 
   async execute({ id, user_id }: IRequest): Promise<Rental> {
     const rental = await this.rentalRepository.findById(id);
-    const car = await this.carsRepository.findById(id);
-    const minimum_daily = 0;
+    const car = await this.carsRepository.findById(rental.car_id);
+
+    const minimum_daily = 1;
 
     if (!rental) {
-      throw new AppError("Rental does not exists");
+      throw new AppError("Rental does not exists!");
     }
 
-    const dateNow = await this.dayJsDateProvider.dateNow();
+    const dateNow = this.dayJsDateProvider.dateNow();
 
-    let daily = await this.dayJsDateProvider.compareInDays(
+    let daily = this.dayJsDateProvider.compareInDays(
       rental.start_date,
       this.dayJsDateProvider.dateNow()
     );
 
-    if (daily < minimum_daily) {
-      daily = 1;
+    if (daily <= 0) {
+      daily = minimum_daily;
     }
 
     const delay = this.dayJsDateProvider.compareInDays(
@@ -58,6 +60,7 @@ class DevolutionRentalUseCase {
     rental.total = total;
 
     await this.rentalRepository.create(rental);
+
     await this.carsRepository.updateAvailable(car.id, true);
 
     return rental;
