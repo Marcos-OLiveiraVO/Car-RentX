@@ -31,7 +31,7 @@ $ yarn
 
  
 
-<h4> 🛠 Project is being developed using the following technologies and concepts: <h4>
+<h4> 🛠 Está sendo desenvolvido utilizando as seguintes tecnologias <h4>
 
     - Node.
     - Express.
