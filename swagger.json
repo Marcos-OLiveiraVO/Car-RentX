@@ -189,7 +189,7 @@
             "BearerAuth": []
           }
         ],
-        "tags": ["cars"],
+        "tags": ["Cars"],
         "summary": "Create a new Car",
         "description": "Create a new car",
         "requestBody": {
@@ -200,18 +200,65 @@
               }
             }
           }
+        },
+        "responses": {
+          "201": {
+            "description": "Created with success"
+          },
+          "400": {
+            "description": "Car Already exists!"
+          }
         }
       }
     },
-    "responses": {
-      "201": {
-        "description": "Created with success"
-      },
-      "400": {
-        "description": "Car Already exists!"
+    "/cars/images/{id}": {
+      "post": {
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "tags": ["Cars"],
+        "summary": "Upload images",
+        "description": "Upload images",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Car id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
       }
     }
   },
+
   "definitions": {
     "specification": {
       "type": "object",
