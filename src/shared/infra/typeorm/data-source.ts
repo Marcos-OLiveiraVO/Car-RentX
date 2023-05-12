@@ -6,6 +6,7 @@ import { Car } from "../../../modules/cars/infra/typeorm/entities/Car";
 import { User } from "../../../modules/accounts/infra/typeorm/entities/User";
 import { CarImage } from "../../../modules/cars/infra/typeorm/entities/CarImage";
 import { Rental } from "../../../modules/rentals/infra/typeorm/entities/Rental";
+import { UserToken } from "../../../modules/accounts/infra/typeorm/entities/UserToken";
 
 require("dotenv/config");
 
@@ -18,7 +19,7 @@ const dataSource = new DataSource({
   username: "postgres",
   password: "20041650",
   database: isTestEnv ? "postgres" : "rentx_test",
-  entities: [Category, Specification, User, Car, CarImage, Rental],
+  entities: [Category, Specification, User, Car, CarImage, Rental, UserToken],
   migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   migrationsTableName: "migrations",
   synchronize: false,

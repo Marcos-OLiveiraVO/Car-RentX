@@ -1,6 +1,6 @@
 import { ICreateRentalDTO } from "@modules/rentals/dtos/ICreateRentalDTO";
 import { ICreateRentalRepository } from "@modules/rentals/repositories/ICreateRentalRepository";
-import { Rental } from "../typeorm/Rental";
+import { Rental } from "../typeorm/entities/Rental";
 import { Repository } from "typeorm";
 import { dataSource } from "@shared/infra/typeorm/data-source";
 
