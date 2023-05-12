@@ -1,4 +1,5 @@
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+import { Car } from "../../../../cars/infra/typeorm/entities/Car";
+
 import {
   Column,
   CreateDateColumn,

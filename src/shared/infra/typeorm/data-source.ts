@@ -1,11 +1,11 @@
-import { DataSource } from "typeorm";
 import "reflect-metadata";
-import { User } from "../../../modules/accounts/infra/typeorm/entities/User";
+import { DataSource } from "typeorm";
 import { Category } from "../../../modules/cars/infra/typeorm/entities/Category-model";
 import { Specification } from "../../../modules/cars/infra/typeorm/entities/Specification";
 import { Car } from "../../../modules/cars/infra/typeorm/entities/Car";
+import { User } from "../../../modules/accounts/infra/typeorm/entities/User";
 import { CarImage } from "../../../modules/cars/infra/typeorm/entities/CarImage";
-import { Rental } from "../../../modules/rentals/infra/typeorm/Rental";
+import { Rental } from "../../../modules/rentals/infra/typeorm/entities/Rental";
 
 require("dotenv/config");
 
