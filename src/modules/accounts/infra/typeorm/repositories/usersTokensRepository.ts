@@ -2,7 +2,7 @@ import { ICreateUserToken } from "@modules/accounts/dtos/ICreateUserToken";
 import { UserToken } from "../entities/UserToken";
 import { Repository } from "typeorm";
 import { dataSource } from "../../../../../shared/infra/typeorm/data-source";
-import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
+import { IUsersTokensRepository } from "../../../repositories/IUsersTokensRepository";
 
 class UsersTokensRepository implements IUsersTokensRepository {
   private repository: Repository<UserToken>;
@@ -25,6 +25,21 @@ class UsersTokensRepository implements IUsersTokensRepository {
     await this.repository.save(userToken);
 
     return userToken;
+  }
+
+  async findUserByIdAndRefreshToken(
+    user_id: string,
+    refresh_token: string
+  ): Promise<UserToken> {
+    const userTokens = await this.repository.findOne({
+      where: { user_id, refresh_token },
+    });
+
+    return userTokens;
+  }
+
+  async deleteById(id: string): Promise<void> {
+    await this.repository.delete(id);
   }
 }
 

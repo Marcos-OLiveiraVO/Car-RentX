@@ -3,8 +3,8 @@ import { sign } from "jsonwebtoken";
 import { compare } from "bcrypt";
 import { AppError } from "@shared/errors/appError";
 import { IUserRepository } from "@modules/accounts/repositories/IUserRepository";
-import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 import auth from "@config/auth";
+import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 
 interface IRequest {
@@ -26,7 +26,7 @@ class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUserRepository,
-    @inject("usersTokensRepository")
+    @inject("UsersTokensRepository")
     private usersTokensRepository: IUsersTokensRepository,
     @inject("DateProvider")
     private dateProvider: IDateProvider
