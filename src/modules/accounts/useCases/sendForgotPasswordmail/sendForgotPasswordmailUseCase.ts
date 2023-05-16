@@ -32,6 +32,7 @@ class SendForgotPasswordMailUseCase {
       "emails",
       "forgotPassword.hbs"
     );
+
     if (!user) {
       throw new AppError("User does not exists!");
     }
