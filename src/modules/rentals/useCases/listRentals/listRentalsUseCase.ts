@@ -1,6 +1,6 @@
 import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/usersRepository";
 import { RentalRepository } from "@modules/rentals/infra/repositories/RentalRepository";
-import { Rental } from "@modules/rentals/infra/typeorm/Rental";
+import { Rental } from "../../../rentals/infra/typeorm/entities/Rental";
 import { AppError } from "@shared/errors/appError";
 import { inject, injectable } from "tsyringe";
 

@@ -1,4 +1,4 @@
-import { Rental } from "@modules/rentals/infra/typeorm/Rental";
+import { Rental } from "../../infra/typeorm/entities/Rental";
 import { ICreateRentalRepository } from "../ICreateRentalRepository";
 import { ICreateRentalDTO } from "@modules/rentals/dtos/ICreateRentalDTO";
 

@@ -1,5 +1,5 @@
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { Rental } from "@modules/rentals/infra/typeorm/Rental";
+import { Rental } from "../../../rentals/infra/typeorm/entities/Rental";
 import { ICreateRentalRepository } from "@modules/rentals/repositories/ICreateRentalRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/appError";
