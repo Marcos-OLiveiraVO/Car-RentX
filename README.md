@@ -1,24 +1,26 @@
 # Car-RentX
 
-A car rental system, which allows users to register their vehicles and other users to search and rent these vehicles according to their preferences and needs.
-4
+A car rental system, which allows admins: to register vehicles and other users can be possible to search and rent these vehicles according to their preferences and needs.
 
-The system has several features, such as user registration, rental registration and the possibility of filtering the search by car specifications,
-such as model, year, color, among others.
 
-## :rocket:Instalação
+The system has several features, such as user registration, rentals rates and the possibility of filtering the search by car specifications,
+among others.
+
+When the project will be finished the description with all features will be put in the description.
+
+## :rocket:Install
 To run the repository it is necessary to clone it, give the following command to install the dependencies:
 
 ```bash
 $ yarn 
 ```
 
-## Rodar o app.
+## Run the app.
 
 
     $ yarn dev
 
-## Rotas
+## Routes.
 
     POST /categories  => Create a new category.
     
@@ -31,7 +33,7 @@ $ yarn
 
  
 
-<h4> 🛠 Está sendo desenvolvido utilizando as seguintes tecnologias <h4>
+<h4> 🛠 Project is being developing following the technologies: <h4>
 
     - Node.
     - Express.
@@ -39,6 +41,7 @@ $ yarn
     - uuid.
     - typeorm.
     - postgres.
+    - jest.
     - swagger.
     - SOLID.
     - Clean Architecture.
