@@ -8,19 +8,19 @@ among others.
 
 When the project will be finished the description with all features will be put in the description.
 
-## :rocket:Instalação
+## :rocket:Install
 To run the repository it is necessary to clone it, give the following command to install the dependencies:
 
 ```bash
 $ yarn 
 ```
 
-## Rodar o app.
+## Run the app.
 
 
     $ yarn dev
 
-## Rotas
+## Routes.
 
     POST /categories  => Create a new category.
     
