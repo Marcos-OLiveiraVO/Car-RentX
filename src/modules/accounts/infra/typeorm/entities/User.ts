@@ -33,7 +33,7 @@ class User {
     switch (process.env.DISK) {
       case "local":
         return `${process.env.APP_API_URL}/avatar/${this.avatar}`;
-      case "S3":
+      case "s3":
         return `${process.env.AWS_BUCKET_URL}/avatar/${this.avatar}`;
       default:
         return null;
