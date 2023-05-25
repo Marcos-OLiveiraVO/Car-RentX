@@ -21,6 +21,7 @@
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@types/mime": "^3.0.1",
     "@types/nodemailer": "^6.4.7",
     "@types/supertest": "^2.0.12",
