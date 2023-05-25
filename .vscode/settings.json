@@ -5,6 +5,7 @@
     "originalname",
     "postgres",
     "rentx",
+    "sendgrid",
     "tsyringe",
     "typeorm"
   ]
