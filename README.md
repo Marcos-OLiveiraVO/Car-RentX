@@ -46,3 +46,4 @@ $ yarn
     - SOLID.
     - Clean Architecture.
     - tsyringe.
+    - aws
