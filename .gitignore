@@ -2,4 +2,5 @@ node_modules
 .vscode
 .git
 .env
-tmp
+tmp/*
+coverage
