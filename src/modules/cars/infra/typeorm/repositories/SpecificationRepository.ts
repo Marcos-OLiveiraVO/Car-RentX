@@ -12,7 +12,7 @@ class SpecificationRepository implements ISpecificationRepository {
   private repository: Repository<Specification>;
 
   constructor() {
-    this.repository = dataSource.getRepository("Specification");
+    this.repository = dataSource.getRepository(Specification);
   }
 
   async create({
