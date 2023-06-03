@@ -32,3 +32,16 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         source: "., !node_modules"
         target: "~/app/Car-RentX"
+        
+     - name: Update API
+       uses: appleboy/ssh-action@v0.1.10
+       with:
+           host: ${{ secrets.SSH_HOST }}
+           username: ${{ secrets.SSH_USER }}
+           port: ${{ secrets.SSH_PORT }}
+           key: ${{ secrets.SSH_KEY }}
+           script: |
+             cd ~/app/Car-RentX
+             yarn
+             ./node_modules/.bin/typeorm migration:run -d dist/shared/infra/typeorm/data-source.js
+             pm2 restart rentx_api
