@@ -14,9 +14,25 @@ import { router } from "./routes";
 import upload from "@config/upload";
 import rateLimiter from "./middlewares/rateLimiter";
 
+import * as Sentry from "@sentry/node";
+
 const app = express();
 
 app.use(rateLimiter);
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  integrations: [
+    new Sentry.Integrations.Http({ tracing: true }),
+    new Sentry.Integrations.Express({ app }),
+    ...Sentry.autoDiscoverNodePerformanceMonitoringIntegrations(),
+  ],
+  tracesSampleRate: 1.0,
+});
+
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
+
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
@@ -25,6 +41,8 @@ app.use("/cars", express.static(`${upload.tmpFolder}/cars`));
 
 app.use(cors());
 app.use(router);
+
+app.use(Sentry.Handlers.errorHandler());
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof AppError) {
