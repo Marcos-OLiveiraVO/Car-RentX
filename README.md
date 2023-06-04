@@ -63,14 +63,143 @@ if you wanna run the tests
 yarn test
 ```
 
+## Documentation 
+<details>
+<summary><strong>Categories</strong></summary>
 
-## Routes.
+#### Create a new category
 
-    POST /categories  => Create a new category.
-    
-    GET  /categories  => list all categories.
-    
-         /api-docs => documentation.
+- Method: POST
+- Endpoint: `/categories`
+- Description: Create a new category.
+
+#### List all categories
+
+- Method: GET
+- Endpoint: `/categories`
+- Description: Retrieve a list of all categories.
+
+</details>
+
+<details>
+<summary><strong>User Management</strong></summary>
+
+#### Create a new user
+
+- Method: POST
+- Endpoint: `/users`
+- Description: Create a new user.
+
+#### Show user profile
+
+- Method: GET
+- Endpoint: `/users/profile`
+- Description: Retrieve the user's profile.
+
+#### Reset password
+
+- Method: POST
+- Endpoint: `/users/reset-password`
+- Description: Reset the user's password.
+
+#### Send forgot password email
+
+- Method: POST
+- Endpoint: `/users/forgot-password`
+- Description: Send an email to the user with instructions for resetting the password.
+
+#### Update user avatar
+
+- Method: PATCH
+- Endpoint: `/users/avatar`
+- Description: Update the user's avatar image.
+
+</details>
+
+<details>
+<summary><strong>Cars</strong></summary>
+
+#### Create a new car
+
+- Method: POST
+- Endpoint: `/cars`
+- Description: Create a new car.
+
+#### Create car specification
+
+- Method: POST
+- Endpoint: `/cars/specifications`
+- Description: Add specifications to a car.
+
+#### Create car category
+
+- Method: POST
+- Endpoint: `/cars/categories`
+- Description: Create a new car category.
+
+#### Create car specification
+
+- Method: POST
+- Endpoint: `/cars/specifications`
+- Description: Create a new car specification.
+
+#### Import car categories
+
+- Method: POST
+- Endpoint: `/cars/import-categories`
+- Description: Import car categories from an external source.
+
+#### List available cars
+
+- Method: GET
+- Endpoint: `/cars/available`
+- Description: Retrieve a list of available cars for rental.
+
+#### List car categories
+
+- Method: GET
+- Endpoint: `/cars/categories`
+- Description: Retrieve a list of all car categories.
+
+#### Upload a car image
+
+- Method: POST
+- Endpoint: `/cars/upload-image`
+- Description: Upload an image for a car.
+
+</details>
+
+<details>
+<summary><strong>Rentals</strong></summary>
+
+#### Create a rental
+
+- Method: POST
+- Endpoint: `/rentals`
+- Description: Create a new rental.
+
+#### Devolution of a rental
+
+- Method: POST
+- Endpoint: `/rentals/devolution`
+- Description: Handle the devolution of a rental.
+
+#### List all rentals
+
+- Method: GET
+- Endpoint: `/rentals`
+- Description: Retrieve a list of all rentals.
+
+</details>
+
+<details>
+<summary><strong>API Documentation</strong></summary>
+
+- Endpoint: `/api-docs`
+- Description: Access the API documentation.
+
+</details>
+
 
 
 ![image](https://user-images.githubusercontent.com/88260644/212519771-8b9d31cf-8f71-4042-b4e9-d2628e16d900.png)
