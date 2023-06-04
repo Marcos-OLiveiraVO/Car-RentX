@@ -220,7 +220,7 @@ In this README.md file, I have provided an overview of the project, listed the m
 <br>
 By using proper headings, bullet points, and code snippets, this README.md file provides an organized and user-friendly introduction to your "Car-RentX" project on GitHub.
 
-<h4> 🛠 Project was developing following the technologies: <h4>
+## <h4> 🛠 Project was developing following the technologies: <h4>
 
     - Node.
     - Express.
@@ -234,3 +234,5 @@ By using proper headings, bullet points, and code snippets, this README.md file 
     - Clean Architecture.
     - tsyringe.
     - AWS.
+  
+For all technologies consult the dependency.md
