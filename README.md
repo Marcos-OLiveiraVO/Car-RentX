@@ -55,6 +55,15 @@ yarn dev
 
 Now you can access the Car-RentX application and start using its functionalities.
 
+## Tests
+
+if you wanna run the tests 
+
+```
+yarn test
+```
+
+
 ## Routes.
 
     POST /categories  => Create a new category.
