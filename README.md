@@ -1,43 +1,59 @@
 # Car-RentX
-# Car Rental System
+# Car rental system.
 
-Bem-vindo ao nosso avançado sistema de aluguel de carros! Nossa plataforma permite que administradores e usuários gerenciem e acessem facilmente uma ampla variedade de veículos disponíveis para locação.
+Car-RentX is a Node.js and TypeScript project built with Express, designed to provide a car rental system. It offers various functionalities for managing users, cars, and rentals.
 
-## Recursos de Administração:
+## Features
 
-- Registro de Veículos: Os administradores podem adicionar facilmente novos veículos ao sistema, incluindo especificações detalhadas, como marca, modelo, ano, quilometragem e tipo de combustível.
-- Gerenciamento de Usuários: Os administradores têm a capacidade de registrar novos usuários e gerenciar perfis existentes, garantindo uma interação perfeita com o sistema.
-- Taxas de Locação: Defina taxas de locação flexíveis com base em fatores como tipo de veículo, duração da locação e demanda sazonal, garantindo preços competitivos para seus clientes.
-- Gerenciamento de Disponibilidade: Os administradores podem atualizar o status de disponibilidade de cada veículo, marcando-os como "disponível", "reservado" ou "em manutenção", para agilizar o processo de locação.
+- User Management:
+  - Create a new user.
+  - Show user profile.
+  - Reset password.
+  - Send forgot password email.
+  - Update the user avatar.
+  - Authenticate a user.
 
-## Recursos do Usuário:
+- Car Management:
+  - Create a new car.
+  - Create car specifications.
+  - Create car categories.
+  - Create car specifications.
+  - Import car categories.
+  - List available cars.
+  - List car categories.
+  - Upload a car image.
 
-- Registro de Usuários: Novos usuários podem criar contas com seus detalhes pessoais e preferências, permitindo uma experiência de locação personalizada.
-- Pesquisa de Veículos: Os usuários podem filtrar sua pesquisa com base em diversos critérios, como especificações do carro (marca, modelo, tipo de combustível), capacidade de assentos, transmissão e muito mais.
-- Gerenciamento de Reservas: Os usuários podem visualizar facilmente os veículos disponíveis, selecionar o período de locação desejado e reservar um veículo que atenda às suas necessidades.
-- Histórico de Reservas: Mantenha o registro de locações anteriores, permitindo que os usuários consultem rapidamente as reservas anteriores para referência futura.
+- Rental Management:
+  - Create a rental.
+  - Devolution of a rental.
+  - List all rentals.
 
-## Recursos Adicionais:
+## Getting Started
 
-- Avaliações e Comentários: Os usuários podem fornecer feedback e avaliar sua experiência de locação, aumentando a transparência e ajudando outros usuários a tomarem decisões informadas.
-- Integração de Pagamento: Gateways de pagamento seguros permitem que os usuários concluam transações sem problemas, garantindo um processo de locação tranquilo.
-- Notificações: Notificações instantâneas mantêm os usuários atualizados sobre o status de suas reservas, locações futuras e outras informações importantes.
+To get started with Car-RentX, follow these steps:
 
-Estamos empolgados em oferecer a você um sistema de aluguel de carros fácil de usar, que combina recursos robustos com uma interface intuitiva. Seja você um administrador gerenciando a frota ou um usuário em busca do veículo perfeito para suas necessidades, nossa plataforma atende aos seus requisitos e simplifica a experiência de locação.
+1. Clone the repository:
+ ```shell
+  git clone https://github.com/your-username/Car-RentX.git
+ ```
+ 
+ 
+2. Install the dependencies using yarn:
+ ```
+   cd Car-RentX
+   yarn
+```
+3. Add your credentials:
 
+- Create a .env file in the root directory.
+- Add your credentials to the .env file (e.g., database connection, email service).
 
-
-## :rocket:Install
-To run the repository it is necessary to clone it, give the following command to install the dependencies:
-
-```bash
-$ yarn 
+4. Run the application:
+```
+yarn dev
 ```
 
-## Run the app.
-
-
-    $ yarn dev
+Now you can access the Car-RentX application and start using its functionalities.
 
 ## Routes.
 
@@ -51,8 +67,22 @@ $ yarn
 ![image](https://user-images.githubusercontent.com/88260644/212519771-8b9d31cf-8f71-4042-b4e9-d2628e16d900.png)
 
  
+## Contributing
+Contributions to Car-RentX are welcome! If you find any issues or have suggestions for improvement, feel free to create a pull request or open an issue.
+Please make sure to follow the code of conduct and provide clear and descriptive commit messages when submitting your changes.
 
-<h4> 🛠 Project is being developing following the technologies: <h4>
+## License
+
+<br>
+This project is licensed under the MIT License.
+<br>
+<br>
+In this README.md file, I have provided an overview of the project, listed the main features, explained how to get started, mentioned the technologies used, and included information about contributing and the project's license.
+<br>
+<br>
+By using proper headings, bullet points, and code snippets, this README.md file provides an organized and user-friendly introduction to your "Car-RentX" project on GitHub.
+
+<h4> 🛠 Project was developing following the technologies: <h4>
 
     - Node.
     - Express.
