@@ -235,4 +235,4 @@ By using proper headings, bullet points, and code snippets, this README.md file 
     - tsyringe.
     - AWS.
   
-For all technologies consult the dependency.md
+[For all technologies consult the dependency.md](dependency.md)
